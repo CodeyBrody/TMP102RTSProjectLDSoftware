@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+import csv
 from datetime import datetime
 from math import nan
 
@@ -20,8 +21,8 @@ def parse_data(data: str):
     data_dict = {}
 
     data_list = [d.strip() for d in data.split(",")]
-    attribute_list = ["timestamp", "display_temp", "sensor_1", "sensor_2", "sensor_3"]
-    string_attribute_list = ["timestamp"]
+    attribute_list = ["timestamp", "display_temp", "sensor_1", "sensor_2", "sensor_3", "sensor_1_err", "sensor_2_err", "sensor_3_err"]
+    string_attribute_list = ["timestamp", "sensor_1_err", "sensor_2_err", "sensor_3_err"]
     float_attribute_list = ["display_temp", "sensor_1", "sensor_2", "sensor_3"]
 
     for num in range(0, len(attribute_list)):
@@ -39,3 +40,25 @@ def parse_data(data: str):
 
 def remove_message_type_label(string: str):
     return string[3:]
+
+def export_data(samples, filename):
+    try:
+        with open(filename, mode='w', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file, quoting=csv.QUOTE_ALL)
+            for s in samples:
+                writer.writerow([s])
+        print(f"'{filename}' created successfully.")
+    except csv.Error as e:
+        print(f"Error writing to file: {e}")
+
+def export_data_append(sample, filename):
+    try:
+        with open(filename, mode='a', newline='', encoding='utf-8') as file:
+            writer = csv.writer(file, quoting=csv.QUOTE_ALL)
+            writer.writerow([sample])
+        print(f"'{filename}' appended to successfully.")
+    except csv.Error as e:
+        print(f"Error appending to file: {e}")
+
+def log_dataframe(df, filename):
+    df.to_csv(filename, index=False)
