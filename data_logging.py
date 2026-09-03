@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import csv
 from datetime import datetime
+from json.decoder import NaN
 from math import nan
 
 @dataclass
@@ -8,12 +9,21 @@ class Sample:
 
     timestamp: str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     display_temp: float = nan
-    sensor_1: float = nan
-    sensor_2: float = nan
-    sensor_3: float = nan
+    sensor1: float = nan
+    sensor2: float = nan
+    sensor3: float = nan
+
+    sensor1_err: str = ""
+    sensor2_err: str = ""
+    sensor3_err: str = ""
 
     def print_data(self):
-        print("Time:", self.timestamp, "Display Temp:", self.display_temp, "Sensor 1:", self.sensor_1, "Sensor 2:", self.sensor_2, "Sensor 3:", self.sensor_3, "\n")
+        print("Time:", self.timestamp,
+              "Display Temp:", self.display_temp,
+              "Sensor 1:", self.sensor1,
+              "Sensor 2:", self.sensor2,
+              "Sensor 3:", self.sensor3, "\n"
+              )
 
 def parse_data(data: str):
     sample = Sample()
@@ -21,16 +31,19 @@ def parse_data(data: str):
     data_dict = {}
 
     data_list = [d.strip() for d in data.split(",")]
-    attribute_list = ["timestamp", "display_temp", "sensor_1", "sensor_2", "sensor_3", "sensor_1_err", "sensor_2_err", "sensor_3_err"]
-    string_attribute_list = ["timestamp", "sensor_1_err", "sensor_2_err", "sensor_3_err"]
-    float_attribute_list = ["display_temp", "sensor_1", "sensor_2", "sensor_3"]
+    attribute_list = ["timestamp", "display_temp", "sensor1", "sensor2", "sensor3", "sensor1_err", "sensor2_err", "sensor3_err"]
+    string_attribute_list = ["timestamp", "sensor1_err", "sensor2_err", "sensor3_err"]
+    float_attribute_list = ["display_temp", "sensor1", "sensor2", "sensor3"]
 
     for num in range(0, len(attribute_list)):
         data_dict[attribute_list[num]] = data_list[num]
 
     for key, value in data_dict.items():
         if key in float_attribute_list:
-            setattr(sample, key, float(value))
+            if value == "--.--":
+                setattr(sample, key, NaN)
+            else:
+                setattr(sample, key, float(value))
         elif key in string_attribute_list:
             setattr(sample, key, value)
         else:

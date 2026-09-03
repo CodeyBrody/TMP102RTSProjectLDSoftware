@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc9a1db8-2446-4090-ac98-bb743f29d5a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/TMP102RTSProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_logging.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="bc9a1db8-2446-4090-ac98-bb743f29d5a9" name="Changes" comment="Created Functions and Members in the TMPSensorGUI Class to facilitate the display/udpating of all temp and error values recieved (Progress on the GUI of the Logging/Data software">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_logging.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_logging.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +20,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;CodeyBrody&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/CodeyBrody/TMP102RTSProjectLDSoftware.git&quot;,
+    &quot;accountId&quot;: &quot;e560071a-a1f0-4dc5-9b4e-9427f3bee2c1&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -38,11 +51,13 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.data_logging.executor": "Run",
+    "Python.gui.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "development",
+    "ignore.virus.scanning.warn.message": "true"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -60,6 +75,39 @@
       <option name="presentableId" value="Default" />
       <updated>1784573120532</updated>
     </task>
+    <task id="LOCAL-00001" summary="Progress on Logging (receiving data packets, parsing, and storing in datastructures), and possible some other changes">
+      <option name="closed" value="true" />
+      <created>1785953070058</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1785953070058</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Progress on Logging (receiving data packets, parsing, and storing in datastructures), and possibly some other changes">
+      <option name="closed" value="true" />
+      <created>1786400659511</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1786400659511</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Progress on Logging (receiving data packets, parsing, and storing in datastructures), and possibly some other changes">
+      <option name="closed" value="true" />
+      <created>1786400662837</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1786400662837</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Created Functions and Members in the TMPSensorGUI Class to facilitate the display/udpating of all temp and error values recieved (Progress on the GUI of the Logging/Data software">
+      <option name="closed" value="true" />
+      <created>1786402941955</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1786402941955</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,5 +120,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Progress on Logging (receiving data packets, parsing, and storing in datastructures), and possible some other changes" />
+    <MESSAGE value="Progress on Logging (receiving data packets, parsing, and storing in datastructures), and possibly some other changes" />
+    <MESSAGE value="Created Functions and Members in the TMPSensorGUI Class to facilitate the display/udpating of all temp and error values recieved (Progress on the GUI of the Logging/Data software" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Functions and Members in the TMPSensorGUI Class to facilitate the display/udpating of all temp and error values recieved (Progress on the GUI of the Logging/Data software" />
   </component>
 </project>

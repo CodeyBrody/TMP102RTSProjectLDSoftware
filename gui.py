@@ -44,7 +44,12 @@ class TMPSensorGUI:
         self.sensor3_err_text = Label(text = self.sensor3_err)
         self.sensor3_err_text.grid(row=3, column = 1)
 
-        self.window.mainloop()
+
+    def update_gui(self, display_temp, sensor1_temp, sensor2_temp, sensor3_temp, sensor1_err, sensor2_err, sensor3_err):
+        self.update_display_temp(display_temp)
+        self.update_sensor1(sensor1_temp, sensor1_err)
+        self.update_sensor2(sensor2_temp, sensor2_err)
+        self.update_sensor3(sensor3_temp, sensor3_err)
 
     def update_display_temp(self, display_temp):
         self.display_temp_text.config(text = display_temp)
@@ -58,7 +63,7 @@ class TMPSensorGUI:
             new_sensor1_err_text = ""
             for symbol in sensor1_faults:
                 new_sensor1_err_text += error_decoding[symbol]
-            self.sensor1_err_text = new_sensor1_err_text
+            self.sensor1_err_text.config(text = new_sensor1_err_text)
 
     def update_sensor2(self, sensor2_temp, sensor2_faults):
         self.sensor2_temp_text.config(text=sensor2_temp)
@@ -82,5 +87,3 @@ class TMPSensorGUI:
                 new_sensor3_err_text += error_decoding[symbol]
             self.sensor3_err_text.config(text = new_sensor3_err_text)
 
-
-window = TMPSensorGUI()
